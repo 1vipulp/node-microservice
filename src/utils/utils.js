@@ -1,6 +1,9 @@
 const self = module.exports = {
     dbCons: require('../constants/db-constant'),
     msgCons: require('../constants/msg-constant'),
+    httpStatusCodes: require('http-status-codes'),
+    httpContext: require('express-http-context'),
+    _lodash: require('lodash'),
 
     responseGenerators: function (responseData, responseStatusCode, responseStatusMsg, responseErrors) {
         var responseJson = {}
