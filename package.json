@@ -1,0 +1,50 @@
+{
+  "name": "microservice",
+  "version": "1.0.0",
+  "description": "boilerplate for node-express microservice with db connection and multiple env support.",
+  "main": "./src/app.js",
+  "engines": {
+    "node": ">= 10.X"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "start": "npm run lint && npm run build && node -r dotenv/config dist/app.js dotenv_config_path=.environment/prod.env",
+    "start:dev": "./node_modules/.bin/nodemon -e js,env,html -w .environment --watch src/ --exec \"npm run lint && npm run build && node -r dotenv/config\" dist/app.js dotenv_config_path=.environment/dev.env",
+    "start:local": "./node_modules/.bin/nodemon -e js,env,html -w .environment --watch src/ --exec \"npm run lint && npm run build && node -r dotenv/config\" dist/app.js dotenv_config_path=.environment/local.env",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "push": "git push && git push heroku master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1vipulp/node-microservice.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "microservice",
+    "node-service",
+    "mongoose-structure",
+    "best",
+    "strcutre"
+  ],
+  "author": "Vipul Panchal - 20191209",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1vipulp/node-microservice/issues"
+  },
+  "homepage": "https://github.com/1vipulp/node-microservice#readme",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.7.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.14",
+    "mongoose-auto-increment": "^5.0.1",
+    "nodemon": "^2.0.1"
+  }
+}
